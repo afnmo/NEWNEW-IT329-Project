@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://kit.fontawesome.com/5ccf46ed5e.js" crossorigin="anonymous"></script>
     <title>Log In</title>
 </head>
+
 <body>
-    <h1>Log In</h1>
-    <form action="" method="post">
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <p>  Your role: </p>
-					
-						<select name= "role" id="role">
-						<option> Home seeker </option>
-						<option> homeowner </option>
-                                                </select>
-                        <br>
-        <input type="submit" value="Log In">
-    </form>
+
+    <header>
+        <img id="logo" src="images\Nuzl Logo.svg" alt="Nuzl logo">
+    </header>
+
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+
+                <div class="input-box">
+                    <p>Select your role:
+                        <select name="seeker-owner" id="seekerOwner">
+                            <!-- <option>Select:</option> -->
+                            <option value="seeker">Home Seeker</option>
+                            <option value="owner">Home Owner</option>
+                        </select>
+                    </p>
+                </div>
+
+
+                <div class="forgot">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-submit" onclick="func();">Login</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function func() {
+            var x = document.getElementById("seekerOwner").value;
+            if (x.value == "seeker") {
+                window.location.href = "seekerHomePage.html";
+            }
+            else if (x.value == "owner") {
+                window.location.href = "ownerHomePage.html";
+            }
+        }
+    </script>
+
 </body>
+
 </html>

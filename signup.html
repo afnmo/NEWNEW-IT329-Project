@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://kit.fontawesome.com/5ccf46ed5e.js" crossorigin="anonymous"></script>
+    <title>signUp</title>
+</head>
+
+<body>
+
+    <header>
+        <img id="logo" src="images\Nuzl Logo.svg" alt="Nuzl logo">
+    </header>
+
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Sign up</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" required>
+                    <label>First Name</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" required>
+                    <label>Last Name</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="number" min="1" max="100" required>
+                    <label>Age</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-family-pants"></i></span>
+                    <input type="number" min="1" max="20" required>
+                    <label>Number of family members</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-money-bill"></i></span>
+                    <input type="text" required>
+                    <label>Income</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                    <input type="tel" required>
+                    <label>Phone Number</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+
+                <button type="submit" class="login-submit" onclick="toLoginPage();">Sign up</button>
+
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toLoginPage() {
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+
+</html>
