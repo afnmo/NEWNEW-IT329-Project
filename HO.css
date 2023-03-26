@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-/* 
+
 * {
     margin: 0;
     padding: 0;
@@ -7,18 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
 
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 body{
     background-color: beige;
@@ -26,15 +15,10 @@ body{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 25%;
     
 }
 
-#logo{
-    position: absolute;
-    width: min(50vw, 250px);
-    left: 0%;
-    top: -30%;
-} */
 
 .RA table,
 .RA th,
@@ -59,14 +43,77 @@ body{
     color: #9D9D9D;
 }
 
-#HO_Info p {
+#info  {
      display: inline;
      text-align: center;
-}
-body{
-   background-color: #F5FDDC;
 }
 
 .LP th, .RA th {
     background-color: #FFDE59;
 }
+
+
+header , #info , #head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    
+}
+#logo{
+    position: absolute;
+    width: min(50vw, 250px);
+    left: 0%;
+    top: -30%;
+    margin-bottom: 20%;
+   
+}
+
+#info {
+     margin-top: 15%;
+}
+ #head { margin-top: 10%;}
+
+#btn1 {
+    position: relative;
+    left: 95%;
+    margin-top: 2%;
+    cursor:pointer;
+    background-color:#fee47a;
+    font: 1em sans-serif;
+    color: black;
+    border: none;
+    border-radius: 10%;
+       min-height: 30px; 
+    width: 60px;
+   
+    text-align: center;
+ 
+ text-decoration: none;
+
+ }
+
+ 
+ #ADD{
+      position: relative;
+    left: 80%;
+      cursor:pointer;
+    background-color:#fee47a;
+    font: 1em sans-serif;
+    color: black;
+    border: none;
+    border-radius: 10%;
+     height: 50px; 
+    width: 50px;
+    text-align: center;
+   text-decoration: none;
+ }
+ a#ADD:hover , a#btn1:hover {
+      background-color: #d1bb60;
+       transition: 0.5s;
+ }
