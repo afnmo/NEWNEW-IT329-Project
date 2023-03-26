@@ -56,7 +56,7 @@ div#btn{
 
 button.log{
    cursor:pointer;
-   background-color: rgb(249, 237, 158);
+   background-color: #ffde59;
    margin: 10%;
    font: 1em sans-serif;
    color: #000000;
@@ -75,7 +75,7 @@ button.log:hover {
 
 /* a{
     text-decoration: none;
-    color: rgb(255, 231, 74);
+    color: #9d9d9d;
  
 } */
 
