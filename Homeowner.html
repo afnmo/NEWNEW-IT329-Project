@@ -9,18 +9,27 @@
 </head>
 <body>
 
-    <!-- <header>
-        <img id="logo" src="images\Nuzl Logo.svg" alt="Nuzl logo">
-    </header> -->
-    
-    <header id="HO_Info">
-        <h1 id="h1_ho"> Hello </h1>
+ 
+      
+    <header>
+        <img id="logo" src="images\Nuzl Logo.svg" alt="Nuzl logo">  
+          <a id="btn1" href="homepage.html">Log out</a>
+     
+        
+        <div id="head"> 
+            <h1 id="h1_ho"> Hello </h1> 
+        </div>
+        
+        <div id="info">
         <p id="p1"> Name of the owner: </p> 
         <p id="p2"> Email: </p> 
         <p id="p3"> Phone number: </p>
+        </div>
+         
     </header>
     
     <main>
+       
         <h2>  Rental Applications </h2>
         <table class="RA"> 
            
@@ -35,7 +44,7 @@
            
             <tbody>
             <tr>
-                <td rowspan="2" > <p class="property">  Olaya Plaza </p> </td><!-- comment -->
+                <td rowspan="2" > <a href="details.html"> <p class="property">  Olaya Plaza </p> </a> </td><!-- comment -->
                 <td rowspan="2"> Riyadh, Olaya dist. </td><!-- comment -->
                 <td> <p class="applicant"> Sara Ahmed </p></td>
                 <td> under consideration </td><!-- comment -->
@@ -51,7 +60,7 @@
             </tr>
             
              <tr> 
-                <td> <p class="property"> AlNakheel Home </p></td>
+                 <td> <a href="details.html"> <p class="property"> AlNakheel Home </p></a> </td>
                 <td >  Riyadh, Alnakheel dist. </td><!-- comment -->
                 <td> <p class="applicant">  Mohammed Saad </p> </td><!-- comment -->
                 <td> Accepted </td>
@@ -62,8 +71,9 @@
         
         </table>
         
-        
-        <h2> Listed Properties </h2><!-- comment -->
+        <br> <br>
+        <h2> Listed Properties </h2>
+        <a id="ADD" href="#.html"> Add Property </a> <!-- add the link to add page -->
           <table class="LP"> 
            
             <thead>
@@ -78,7 +88,7 @@
             
             <tbody>
                 <tr> 
-                     <td> <p class="property"> Home Plaza </p></td>
+                    <td> <a href="details.html"> <p class="property"> Home Plaza </p> </a></td>
                      <td> Apartment </td><!-- comment -->
                      <td> 2500/month </td><!-- comment -->
                      <td> 4 </td><!-- comment -->
@@ -87,7 +97,7 @@
                 
                 </tr><!-- comment -->
                 <tr>
-                    <td> <p class="property"> Holiday Villa </p></td><!-- comment -->
+                    <td> <a href="details.html"> <p class="property"> Holiday Villa </p></a> </td><!-- comment -->
                     <td> Villa </td>
                     <td> 7000/month </td><!-- comment -->
                     <td> 6</td><!-- comment -->
@@ -97,7 +107,7 @@
                 </tr>
                 
                 <tr> 
-                    <td> <p class="property"> Rawabi Square </p></td>
+                    <td> <a href="details.html"> <p class="property"> Rawabi Square </p></a> </td>
                     <td> Apartment </td><!-- comment -->
                     <td> 1000/month </td><!-- comment -->
                     <td> 4 </td>
