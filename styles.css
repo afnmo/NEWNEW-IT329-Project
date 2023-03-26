@@ -5,7 +5,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none; */
 }
+
+/* img{
+    width: 100%;
+} */
 
 header{
     position: fixed;
