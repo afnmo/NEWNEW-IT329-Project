@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Add Property </title>
-    <link rel="stylesheet" href="base.css"> 
-   <link rel="stylesheet" href="homeowner.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="addProperty.css"> 
     <script src="https://kit.fontawesome.com/5ccf46ed5e.js" crossorigin="anonymous"></script>
 </head>
 
@@ -20,45 +20,46 @@
             <form class="form_Add" action="" method="post">
                 <fieldset>
                     <legend> Property Details </legend>
-              <label for="name"> Property Name:</label><br>
-	      <input type="text" id="name" name="name"><br>
+             <i class="fa fa-home"></i> <label for="name"> Property Name:</label><br>
+	      <input type="text" id="name" name="name" required><br>
               
-              <p> Category:  </p> 
+              <p> <i class="fa fa-home"></i> Category:  </p> 
   
-		 <input type="radio" name="category" value ="Apartment" > Apartment
+		 <input type="radio" name="category" value ="Apartment" required > Apartment
 		 <input type="radio" name="category" value ="Villa" > Villa
                  <input type="radio" name="category" value ="other" > Other:
                  <input type="text" id="category" name="category"> <br>
                  <br>
                  
-                 <label for="location"> Location:</label><br>
-	         <input type="text" id="location" name="location"><br>
+                 <i class="fa fa-home"></i> <label for="location"> Location:</label><br>
+	         <input type="text" id="location" name="location" required><br>
                  
-                  <label for="Rooms"> Number of rooms:</label><br>
-                  <input type ="number" id="Rooms" name="Rooms" value=""><br>
+                  <i class="fa fa-home"></i> <label for="Rooms"> Number of rooms:</label><br>
+                  <input type ="number" id="Rooms" name="Rooms" value="" required><br>
                   
-                  <label for="rent"> Rent:</label><br>
-                  <input type="number" id="rent" name="rent" value="" placeholder="Rent per month"> <br>
+                <i class="fa fa-home"></i>  <label for="rent"> Rent:</label><br>
+                  <input type="number" id="rent" name="rent" value="" placeholder="Rent per month" required min="50"> <br>
                  
-                 <label for="tenants"> Maximum Number Of Tenants:</label><br>
-                 <input type="number" id="tenants" name="tenants" value="" > <br>
+               <i class="fa fa-home"></i>  <label for="tenants"> Maximum Number Of Tenants:</label><br>
+                 <input type="number" id="tenants" name="tenants" value="" required > <br>
                  
-                 <p> Description: </p>
-                 <textarea name="description" rows="5" cols="64" id="description" placeholder="Add a decription of the property">  </textarea> 
+                 <p><i class="fa fa-home"></i>  Description: </p>
+                 <textarea name="description" rows="5" cols="64" id="description" placeholder="Add a decription of the property" required>  </textarea> 
                  <br>
                  
-                 <input type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg" > <br>
+                 <p> <i class="fa fa-home"></i> Upload Pictures Of The Property:</P> <input type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg" required> <br>
                  <br>
                 </fieldset>
                 <br> 
-                 <input type= "button" id="addP" class ="submit" value="Add">
+                <div id="submit">
+                    <input type= "submit" id="addP" class ="submit" value="Add"> </div>
                  
                  
                 
                 
             </form>
     
-    <footer class="footer">
+   <!-- <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col">
@@ -91,7 +92,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
 </body>
 </html>
