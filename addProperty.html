@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add</title>
+    <title> Add Property </title>
 </head>
+
+
 <body>
+    <h1> Add A Property </h1>
+    <div id="btn">
+
+            <button id="logOutBtn"><a href="homepage.html"> Log out </a></button> </div>
+            
+            <form class="form_Add" action="" method="post">
+                <fieldset>
+                    <legend> Property Details </legend>
+              <label for="name"> Property Name:</label><br>
+	      <input type="text" id="name" name="name"><br>
+              
+              <p> Category:  </p> 
+  
+		 <input type="radio" name="category" value ="Apartment" > Apartment
+		 <input type="radio" name="category" value ="Villa" > Villa
+                 <input type="radio" name="category" value ="other" > Other:
+                 <input type="text" id="category" name="category"> <br>
+                 <br>
+                 
+                 <label for="location"> Location:</label><br>
+	         <input type="text" id="location" name="location"><br>
+                 
+                  <label for="Rooms"> Number of rooms:</label><br>
+                  <input type ="number" id="Rooms" name="Rooms" value=""><br>
+                  
+                  <label for="rent"> Rent:</label><br>
+                  <input type="number" id="rent" name="rent" value="" placeholder="Rent per month"> <br>
+                 
+                 <label for="tenants"> Maximum Number Of Tenants:</label><br>
+                 <input type="number" id="tenants" name="tenants" value="" > <br>
+                 
+                 <p> Description: </p>
+                 <textarea name="description" rows="5" cols="64" id="description" placeholder="Add a decription of the property">  </textarea> 
+                 <br>
+                 
+                 <input type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg" > <br>
+                 <br>
+                </fieldset>
+                <br> 
+                 <input type= "button" id="addP" class ="submit" value="Add">
+                 
+                 
+                
+                
+            </form>
+    
     
 </body>
 </html>
