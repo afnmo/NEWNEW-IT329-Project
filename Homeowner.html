@@ -12,9 +12,8 @@
  
       
     <header>
-        <img id="logo" src="images\Nuzl Logo.svg" alt="Nuzl logo">  
-          <a id="btn1" href="homepage.html">Log out</a>
-     
+        <img id="logo" src="images\Nuzl Logo.svg" alt="Nuzl logo"> 
+     </header>
         
         <div id="head"> 
             <h1 id="h1_ho"> Hello </h1> 
@@ -26,18 +25,20 @@
         <p id="p3"> Phone number: </p>
         </div>
          
-    </header>
-    
+   
+ <div class="btn"> 
+     <button id="logOutBtn"><a href="#"> Log out </a> </button>
+ </div>
     <main>
-       
+        
         <h2>  Rental Applications </h2>
         <table class="RA"> 
            
             <thead>
                  <tr> 
-                   <th> Property name </th><!-- comment -->
-                   <th> Location </th><!-- comment -->
-                   <th> Applicant </th><!-- comment -->
+                   <th> Property name </th>
+                   <th> Location </th>
+                   <th> Applicant </th>
                    <th> Owner </th>
                  </tr>
             </thead>
@@ -45,24 +46,24 @@
             <tbody>
             <tr>
                 <td rowspan="2" > <a href="details.html"> <p class="property">  Olaya Plaza </p> </a> </td><!-- comment -->
-                <td rowspan="2"> Riyadh, Olaya dist. </td><!-- comment -->
+                <td rowspan="2"> Riyadh, Olaya dist. </td>
                 <td> <p class="applicant"> Sara Ahmed </p></td>
-                <td> under consideration </td><!-- comment -->
+                <td> under consideration </td>
                 <td> <p class="a"> Accept</p> <p class="d">   Decline </p> </td>
                
             </tr>
             
             <tr> 
                 <td><p class="applicant">  Ali Mohammed </p> </td>
-                <td> under consideration </td><!-- comment -->
+                <td> under consideration </td>
                 <td> <p class="a"> Accept</p> <p class="d">   Decline </p> </td>
                 
             </tr>
             
              <tr> 
                  <td> <a href="details.html"> <p class="property"> AlNakheel Home </p></a> </td>
-                <td >  Riyadh, Alnakheel dist. </td><!-- comment -->
-                <td> <p class="applicant">  Mohammed Saad </p> </td><!-- comment -->
+                <td >  Riyadh, Alnakheel dist. </td>
+                <td> <p class="applicant">  Mohammed Saad </p> </td>
                 <td> Accepted </td>
                 <td> </td>
                 
@@ -73,13 +74,16 @@
         
         <br> <br>
         <h2> Listed Properties </h2>
-        <a id="ADD" href="#.html"> Add Property </a> <!-- add the link to add page -->
-          <table class="LP"> 
+        <div class="btn"> 
+            <button id="ADD">  <a  href="addProperty.html"> Add Property </a> 
+            </button> 
+        </div>
+            <table class="LP"> 
            
             <thead>
                  <tr> 
                    <th> Property Name </th>
-                   <th> Category </th><!-- comment -->
+                   <th> Category </th>
                    <th> Rent </th>
                    <th> Rooms </th>
                    <th> Location </th>
@@ -89,31 +93,31 @@
             <tbody>
                 <tr> 
                     <td> <a href="details.html"> <p class="property"> Home Plaza </p> </a></td>
-                     <td> Apartment </td><!-- comment -->
-                     <td> 2500/month </td><!-- comment -->
-                     <td> 4 </td><!-- comment -->
-                     <td> Riyadh, AlNarjies dist.</td><!-- comment -->
+                     <td> Apartment </td>
+                     <td> 2500/month </td>
+                     <td> 4 </td>
+                     <td> Riyadh, AlNarjies dist.</td>
                      <td> <p class="del"> Delete </p> </td>
                 
                 </tr><!-- comment -->
                 <tr>
                     <td> <a href="details.html"> <p class="property"> Holiday Villa </p></a> </td><!-- comment -->
                     <td> Villa </td>
-                    <td> 7000/month </td><!-- comment -->
-                    <td> 6</td><!-- comment -->
+                    <td> 7000/month </td>
+                    <td> 6</td>
                     <td> Riyadh, AlAqeeq dist.</td>
-                    <td> <p class="del"> Delete </p> </td><!-- comment -->
+                    <td> <p class="del"> Delete </p> </td>
                
                 </tr>
                 
                 <tr> 
                     <td> <a href="details.html"> <p class="property"> Rawabi Square </p></a> </td>
-                    <td> Apartment </td><!-- comment -->
-                    <td> 1000/month </td><!-- comment -->
+                    <td> Apartment </td>
+                    <td> 1000/month </td>
                     <td> 4 </td>
                     <td> Riyadh, AlRawabi dist.</td>
-                    <td> <p class="del"> Delete </p> </td><!-- comment -->
-
+                    <td> <p class="del"> Delete </p> </td>
+                </tr>
                     
             </tbody>
           </table>
