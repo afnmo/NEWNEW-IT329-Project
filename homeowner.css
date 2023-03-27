@@ -1,15 +1,23 @@
 
-main , header {
-    justify-content: center;
+main , header{
     display: flex;
     align-items: center;
     flex-wrap: wrap; 
     margin-top: 25%;
+   
+}
+body {
+    justify-content: center;
     background-color: #FAF7F2;
 }
-
 h1 , h2 
-{color: #192557}
+{color: #192557
+}
+h2{
+    padding: 0% 10% ;
+    text-align: center;
+}
+
 
 .RA table,
 .RA th,
@@ -29,7 +37,9 @@ h1 , h2
     color: #192557;
 }
 
-table { width : 90%;}
+table { width : 90%;
+
+}
 
 .a , .d , .property , .applicant, .del{
     display: inline;
@@ -44,7 +54,7 @@ table { width : 90%;}
 }
 
 .LP th, .RA th {
-    background-color: #FFDE59;
+    background-color: #E8B74D;
 }
 
 
@@ -61,11 +71,18 @@ header , #info , #head{
     
 }
 #logo{
+     /* (A) RESPONSIVE LOGO */
+     width: 80%;
+     height: auto;
+ 
+     /* (B) RECOMMENDED - LIMIT MAXIMUM WIDTH */
+     max-width: 300px;
+
     position: absolute;
-    width: min(50vw, 250px);
-    left: 0%;
-    top: -30%;
-    margin-bottom: 20%;
+    left: -5%;
+    top: -900%;
+    
+ 
    
 }
 
@@ -110,7 +127,17 @@ button{
 #ADD {
 position: absolute; 
 left : 70%;
-top: 120%;
+top: 140%;
 min-width: 120px;
 
 }
+table {
+    width: 80%;
+    padding: 5%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#h22 { align: left;
+ margin-left:auto;
+    margin-right:auto;}
