@@ -112,7 +112,7 @@ button{
   
  }
  
-.btn button:hover {
+ button:hover {
     background-color:#ff7878;
     transform: scale(1.1);
     }
@@ -127,8 +127,9 @@ button{
 #ADD {
 position: absolute; 
 left : 70%;
-top: 140%;
+top: 130%;
 min-width: 120px;
+
 
 }
 table {
@@ -141,3 +142,9 @@ table {
 #h22 { align: left;
  margin-left:auto;
     margin-right:auto;}
+
+div {
+    display: block;
+    align-items: center;
+}
+#btn {padding-bottom: 0.5%;}
