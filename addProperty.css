@@ -11,7 +11,21 @@ h1 {
   font-family:  Times, serif;
  
 }
+#logo{
+     /* (A) RESPONSIVE LOGO */
+     width: 80%;
+     height: auto;
+ 
+     /* (B) RECOMMENDED - LIMIT MAXIMUM WIDTH */
+     max-width: 300px;
 
+    position: absolute;
+    left: -5%;
+    top: -10%;
+    
+ 
+   
+}
  button , #addP{
     cursor:pointer;
     background-color: #192557;
@@ -64,8 +78,10 @@ h1 {
 
 
 
-
-
+legend {
+    font-size: 22px;
+    color:#E8B74D;
+}
 
 
 
