@@ -35,6 +35,7 @@ h2{
     padding: 15px;
     justify-content: center; 
     color: #192557;
+    border-radius: 10px;
 }
 
 table { width : 90%;
