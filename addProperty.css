@@ -1,7 +1,13 @@
 body {
     background-color: #FAF7F2;
 }
-
+div#btn{
+    display: flex;
+    flex-direction: row;
+    position: absolute; 
+    top: 8%;
+    left: 90%;
+ }
 h1 {
   position: absolute;
   top: 10%;
@@ -55,8 +61,8 @@ h1 {
    
 #logOutBtn {
     position: absolute; 
-    top: -4%;
-    left: 85%;
+    top: -1350%;
+    left: 300%;
 
 }
 
