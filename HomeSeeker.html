@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HomeSeeker page</title>
+    <link rel="stylesheet" href="HS.css">
+        <script src="HS.js"> </script>
+</head>
+<body>
+
+ 
+      
+    <header>
+        <img id="logo" src="Nuzl Logo.svg" alt="Nuzl logo">  
+          <a id="btn1" href="homepage.html">Log out</a>
+     
+        
+        <div id="head"> 
+            <h1 id="h1_ho"> Hello </h1> 
+        </div>
+        
+        <div id="info">
+        <p id="p1"> Name of the owner:Rahaf </p> 
+        <p id="p2"> Email:rl@sdl.com </p> 
+        <p id="p3"> Phone number:055694491 </p>
+        </div>
+         
+    </header>
+    
+    <main>
+       
+        <h2>  Requested Homes</h2>
+        <table id="RH"> 
+           
+            <thead>
+                 <tr> 
+                   <th> Property name </th><!-- comment -->
+                   <th> Category </th><!-- comment -->
+                   <th> Rent </th><!-- comment -->
+                   <th> Status </th>
+                 </tr>
+            </thead>
+           
+            <tbody>
+            <tr>
+                <td class="p" > <a href="details.html"> <p class="property">  Al-Yasmeen Home </p> </a> </td><!-- comment -->
+                <td class="c"> Villa </td><!-- comment -->
+                <td class="r"> 6000/months</td>
+                <td> under consideration </td><!-- comment -->
+                <td> <input id="w" type="button" value="withdraw"  onclick ="deleteRow(this)"  > </td>
+               
+            </tr>
+            
+            <tr> 
+                <td class="p"><a href="details.html"> <p class="property">Al-Hittin plaza</p> </a></td>
+                <td class="c"> Apartment</td><!-- comment -->
+                <td class="r">3000/month</td>
+                <td>  Accepted </td>
+                <td></td>
+                
+                
+            </tr>
+            
+             <tr> 
+                 <td class="p"> <a href="details.html"> <p class="property"> AlNakheel Home </p></a> </td>
+                <td class="c"> villa </td><!-- comment -->
+                <td class="r">   5000/month </td><!-- comment -->
+                <td> declined</td>
+                <td> </td>
+                
+            </tr>
+            </tbody>
+        
+        </table >
+        
+        <br> <br>
+        <p>
+        <h2> Homes For Rent </h2>
+        <h3>Search By Category</h3> 
+    </p>
+        
+        
+        <div class="filter">
+            
+        <select id="mylist" onchange="myFunction()" class='form-control' > 
+            <option value="">All</option>
+            <option value="Apartment"> Apartment
+            </option> 
+             <option value="Villa"> Villa
+            </option>                
+        </select>
+        </div>
+        
+        
+        
+        
+       <table id="myTable">
+            <thead>
+                 <tr> 
+                   <th> Property Name </th>
+                   <th> Category </th><!-- comment -->
+                   <th> Rent </th>
+                   <th> Rooms </th>
+                   <th> Location </th>
+                 </tr>
+            </thead>
+            
+            <tbody>
+                <tr> 
+                     <td> <a href="details.html"> <p class="property">   Noors Home </p> </a></td>
+                     <td> Apartment </td><!-- comment -->
+                     <td> 5500/month </td><!-- comment -->
+                     <td> 6 </td><!-- comment -->
+                     <td> Riyadh, AlNarjies dist.</td><!-- comment -->
+                     <td> <p class="Apl"><a href=""> Apply</a> </p> </td>
+                
+                </tr><!-- comment -->
+                <tr>
+                    <td> <a href="details.html"> <p class="property"> Holiday Villa </p></a> </td><!-- comment -->
+                    <td> Villa </td>
+                    <td> 7000/month </td><!-- comment -->
+                    <td> 4</td><!-- comment -->
+                    <td> Riyadh, AlAqeeq dist.</td>
+                    <td> <p class="Apl"> <a href="">Apply </a></p> </td><!-- comment -->
+               
+                </tr>
+                
+                
+            </tbody>
+          </table>
+
+
+    </main>
+
+</body>
+
+
+</html>
