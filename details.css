@@ -5,8 +5,8 @@ body {
 
 h1 {
   position: absolute;
-  top: 10%;
-  left:43%;
+  top: 6%;
+  left:45%;
   color:  #192557;
   font-size: 1.8em;
   font-family:  Times, serif;
@@ -19,8 +19,8 @@ div#btn{
     display: flex;
     flex-direction: row;
     position: absolute; 
-    top: 23%;
-    left: 41%;
+    top: 90%;
+    left: 30%;
  }
  
  button{
@@ -50,14 +50,14 @@ div#btn{
    
 #logOutBtn {
     position: absolute; 
-    top: -200%;
+    top: -1300%;
     left: 300%;
 
 }
 #propImg img{
     position: absolute;
-    top: 113%;
-    left: 18%;
+    top: 150%;
+    left: 16%;
     width: 65%;
 }
 
@@ -73,13 +73,13 @@ img{
 	font-size: 16px;
 	padding: 30px 30px 15px 30px;
     position: absolute;
-    top: 35%;
-    left: 30%;
-    width: 500px;
-    height: 350px;
+    top: 23%;
+    left: 25%;
+    width: 600px;
+    height: 650px;
     background-color: #FAF7F2;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    line-height: 220%;
+    line-height: 260%;
 }
 
 .form-style-4 input[type=text],
@@ -93,14 +93,16 @@ img{
 .form-style-4 label {
 	display:block;
 	margin-bottom: 10px;
+   
 }
 .form-style-4 label > span{
 	display: inline-block;
 	width: 150px;
 }
 
-.form-style-4 input[type=text]
+.form-style-4 input[type=text] 
 {
+    text-align: center;
     pointer-events: none;
 	background: transparent;
 	border: none;
@@ -110,6 +112,18 @@ img{
 	padding: 0px 0px 0px 0px;
 }
 
+.form-style-4 textarea{
 
+    text-align: center;
+    pointer-events: none;
+    line-height: 1.2em;
+    background-color: #FAF7F2;
+    font-size: 1em;
+    padding-top: 8%;
+    font-family:  Times, serif;
+    color: #192557;
+    height: 150px;
+	
+}
 
 
