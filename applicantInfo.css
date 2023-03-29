@@ -1,0 +1,123 @@
+body {
+    background-color: #FAF7F2;
+}
+#logo{
+     /* (A) RESPONSIVE LOGO */
+     width: 80%;
+     height: auto;
+ 
+     /* (B) RECOMMENDED - LIMIT MAXIMUM WIDTH */
+     max-width: 300px;
+
+    position: absolute;
+    left: -5%;
+    top: -10%;
+    
+ 
+   
+}
+
+h1 {
+  position: absolute;
+  top: 6%;
+  left:40%;
+  color:  #192557;
+  font-size: 1.8em;
+  font-family:  Times, serif;
+ 
+}
+
+
+div#btn{
+    display: flex;
+    flex-direction: row;
+    position: absolute; 
+    top: 8%;
+    left: 90%;
+ }
+ 
+ button{
+    cursor:pointer;
+    background-color: #192557;
+    margin: 5%;
+    font: 1em 'Trebuchet MS', sans-serif;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 40px;
+    min-height: 35px; 
+    min-width: 100px;
+ 
+ }
+ 
+ a{
+     text-decoration: none;
+     color: #ffffff;
+  
+ }
+ 
+   
+#btn button:hover {
+    background-color:#ff7878;
+    transform: scale(1.1);
+    }
+   
+#logOutBtn {
+    position: absolute; 
+    top: -1350%;
+    left: 300%;
+
+}
+#propImg img{
+    position: absolute;
+    top: 150%;
+    left: 16%;
+    width: 65%;
+}
+
+
+
+.form-Applicant{
+	width: 450px;
+	font-size: 16px;
+	padding: 30px 30px 15px 30px;
+    position: absolute;
+    top: 23%;
+    left: 25%;
+    width: 600px;
+    height: 400px;
+    background-color: #FAF7F2;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    line-height: 260%;
+    border-radius: 20px;
+}
+
+.form-Applicant input[type=text],
+.form-Applicantlabel
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	color: #192557;;
+
+}
+.form-Applicant label {
+	display:block;
+	margin-bottom: 10px;
+   
+}
+.form-Applicant label > span{
+	display: inline-block;
+	width: 150px;
+}
+
+.form-Applicant input[type=text] 
+{
+    text-align: center;
+    pointer-events: none;
+	background: transparent;
+	border: none;
+	border-bottom: 1px dashed #83A4C5;
+	width: 275px;
+	outline: none;
+	padding: 0px 0px 0px 0px;
+}
+
