@@ -64,7 +64,7 @@ button#logOutBtn:hover,
     flex-direction: column;
     align-items: center;
     font-size: 16px;
-    padding: 30px 50px 15px 30px;
+    padding: 30px 30px 15px 30px;
     margin-left: 30%;
     margin-top: 15%;
     margin-bottom: 5%;
@@ -74,7 +74,7 @@ button#logOutBtn:hover,
     transform: translate(-50%, -50%); */
     /* width: 600px; */
     max-width:max-content;
-    height: 780px;
+    height: 890px;
     background-color: #FAF7F2;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     line-height: 220%;
@@ -84,6 +84,7 @@ button#logOutBtn:hover,
 .form_Add legend {
     font-size: 22px;
     color: #E8B74D;
+    
 }
 
 
