@@ -1,0 +1,71 @@
+
+header{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/background.png");
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+#front {
+    color: #E8B74D;
+    font: 1.5em 'Trebuchet MS', sans-serif;
+    margin-top: 10%;
+}
+
+#btn-container{
+    /* display: flex;
+    /* height: 50%; 
+    flex-direction: row;
+    justify-content: flex-end;*/
+    position: absolute;
+    display: flex;
+    height: 50%;  
+    flex-direction: column;
+    top: 30%;
+    left: 65%;
+}
+
+
+button.button-grow {
+
+    padding: 10px;
+    cursor: pointer;
+    background-color: #192557;
+    margin: 5%;
+    font: 1em 'Trebuchet MS', sans-serif;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 40px;
+    min-height: 80px;
+    min-width: 190px;
+
+
+}
+
+.button-grow a {
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+
+.button-grow:hover {
+    background-color: #ff7878;
+    transform: scale(1.1);
+}
+
+
+
+#about{
+    margin-top: 5%;
+}
+
+.card-body{
+    font-size: 50px;
+}
+

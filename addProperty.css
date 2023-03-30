@@ -1,79 +1,79 @@
 body {
     background-color: #FAF7F2;
 }
-div#btn{
+
+div#btn {
     display: flex;
     flex-direction: row;
-    position: absolute; 
+    position: absolute;
     top: 8%;
     left: 90%;
- }
-h1 {
-  position: absolute;
-  top: 10%;
-  left:43%;
-  color:  #192557;
-  font-size: 1.8em;
-  font-family:  Times, serif;
- 
 }
-#logo{
-     /* (A) RESPONSIVE LOGO */
-     width: 80%;
-     height: auto;
- 
-     /* (B) RECOMMENDED - LIMIT MAXIMUM WIDTH */
-     max-width: 300px;
 
+h1#addText {
     position: absolute;
-    left: -5%;
-    top: -10%;
-    
- 
-   
+    top: 20%;
+    left: 45%;
+    color: #192557;
+    font-size: 1.8em;
+    font-family: Times, serif;
+
 }
- button , #addP{
-    cursor:pointer;
+
+
+button#logOutBtn,
+#addP {
+    cursor: pointer;
     background-color: #192557;
-    margin: 5%;
+    margin: 2%;
     font: 1em 'Trebuchet MS', sans-serif;
     border: none;
     transition: all 0.3s ease-in-out;
     border-radius: 40px;
-    min-height: 35px; 
+    min-height: 35px;
     min-width: 100px;
- 
- }
- a , #addP{
-     text-decoration: none;
-     color: #ffffff;
-  
- }
- 
- #submit {
-     
-     text-align: center;
- }
- button:hover , #addP:hover {
-    background-color:#ff7878;
+
+}
+
+#logOutBtn a,
+#addP {
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+#submit {
+    text-align: center;
+}
+
+button#logOutBtn:hover,
+#addP:hover {
+    background-color: #ff7878;
     transform: scale(1.1);
-    }
-   
+}
+
 #logOutBtn {
-    position: absolute; 
+    position: absolute;
     top: -1350%;
     left: 300%;
 
 }
 
-.form_Add{
-	width: 450px;
-	font-size: 16px;
-	padding: 30px 50px 15px 30px;
-    position: absolute;
-    top: 35%;
+.form_Add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    padding: 30px 50px 15px 30px;
+    margin-left: 30%;
+    margin-top: 15%;
+    margin-bottom: 5%;
+    /* position: absolute; */
+    /* top: 35%;
     left: 30%;
-    width: 500px;
+    transform: translate(-50%, -50%); */
+    /* width: 600px; */
+    max-width:max-content;
     height: 780px;
     background-color: #FAF7F2;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -81,18 +81,13 @@ h1 {
     border-radius: 20px;
 }
 
-
-
-
-
-legend {
+.form_Add legend {
     font-size: 22px;
-    color:#E8B74D;
+    color: #E8B74D;
 }
 
 
-
-
+/* footer */
 
 .container {
     max-width: 1170px;
@@ -104,18 +99,19 @@ legend {
     flex-wrap: wrap;
 }
 
-ul {
+.footer ul {
     list-style: none;
 }
 
 .footer {
     background-color: #24262b;
-    padding: 70px 0;
+    padding: 50px 0;
     line-height: 1.5;
+
 }
 
 .footer-col {
-    width: 25%;
+    width: 33%;
     padding: 0 15px;
 }
 
@@ -177,16 +173,20 @@ ul {
     background-color: #ffffff;
 }
 
-/* responsive */
-@media(max-width: 767px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
-    }
-}
 
 @media(max-width: 574px) {
     .footer-col {
         width: 100%;
     }
+}
+
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+
+    
 }
