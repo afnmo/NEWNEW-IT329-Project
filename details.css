@@ -17,7 +17,7 @@ h1 {
 div#btn{
     display: flex;
     flex-direction: row;
-    /* position: absolute;  */
+    position: absolute; 
     top: 90%;
     left: 30%;
  }
@@ -25,13 +25,13 @@ div#btn{
  button{
     cursor:pointer;
     background-color: #192557;
-    margin: 5%;
+    margin: 2%;
     font: 1em 'Trebuchet MS', sans-serif;
     border: none;
     transition: all 0.3s ease-in-out;
     border-radius: 40px;
-    min-height: 35px; 
-    min-width: 100px;
+    height: 40px;
+    width: 90px;
  
  }
  
@@ -47,15 +47,14 @@ div#btn{
     transform: scale(1.1);
 }
    
-/* #logOutBtn {
+#logOutBtn {
     position: absolute; 
     top: -1350%;
     left: 300%;
 
-} */
-
+}
 #propImg img{
-    /* position: absolute; */
+    position: absolute;
     top: 150%;
     left: 16%;
     width: 65%;
@@ -117,8 +116,8 @@ img{
 
     text-align: center;
     pointer-events: none;
-    line-height: 1.2em;
     background-color: #FAF7F2;
+    line-height: 1.2em;
     font-size: 1em;
     padding-top: 8%;
     font-family:  Times, serif;
