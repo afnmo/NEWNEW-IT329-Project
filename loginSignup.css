@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     /* scroll-padding-top: 1rem;
     scroll-behavior: smooth;
     list-style: none;
@@ -15,18 +15,16 @@
     width: 100%;
 } */
 
-header{
+/* header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    /* test */
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 body{
     background-color: beige;
@@ -37,13 +35,6 @@ body{
     
 }
 
-#logo{
-    position: absolute;
-    /* width: 20.5%; */
-    width: min(50vw, 250px);
-    left: 0%;
-    top: -30%;
-}
 
 div#btn{
    position: absolute;
@@ -199,6 +190,3 @@ a:hover{
     font-weight: 500;
 
 }
-
-
-
