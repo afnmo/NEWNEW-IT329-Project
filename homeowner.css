@@ -11,7 +11,7 @@ body {
     background-color: #FAF7F2;
 }
 h1 , h2 
-{color: #192557
+{color: #192557;
 }
 h2{
     padding: 0% 10% ;
@@ -28,8 +28,8 @@ h2{
 .LP tr,
 .LP td 
 {
-    border: 2px solid;
-    border-color: black;
+   border:   2px solid;
+    
     text-align: center;
     margin: auto;
     padding: 15px;
@@ -37,6 +37,8 @@ h2{
     color: #192557;
     border-radius: 10px;
 }
+
+
 
 table { width : 90%;
 
