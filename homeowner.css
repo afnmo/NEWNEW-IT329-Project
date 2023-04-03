@@ -42,7 +42,7 @@ h2{
 
 table { width : 90%;
        margin-bottom: 10px;
-
+       border-collapse:initial;
 }
 
 .a , .d , .property , .applicant, .del{
