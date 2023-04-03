@@ -6,13 +6,19 @@ main , header{
     margin-top: 25%;
    
 }
+
+
 body {
     justify-content: center;
     background-color: #FAF7F2;
 }
-h1 , h2 
-{color: #192557;
+
+
+h1 , h2 {
+    color: #192557;
 }
+
+
 h2{
     padding: 0% 10% ;
     text-align: center;
@@ -28,8 +34,7 @@ h2{
 .LP tr,
 .LP td 
 {
-   border:   2px solid;
-    
+    border:   2px solid; 
     text-align: center;
     margin: auto;
     padding: 15px;
@@ -39,11 +44,15 @@ h2{
 }
 
 
-
-table { width : 90%;
-       margin-bottom: 10px;
-       border-collapse:initial;
+table {
+    margin-bottom: 10px;
+    border-collapse:initial;
+    width: 80%;
+    padding: 5%;
+    margin-left:auto;
+    margin-right:auto;
 }
+
 
 .a , .d , .property , .applicant, .del{
     display: inline;
@@ -52,10 +61,14 @@ table { width : 90%;
     color: #9D9D9D;
 }
 
-#info  {
+
+
+#info {
      display: inline;
      text-align: center;
 }
+
+
 
 .LP th, .RA th {
     background-color: #E8B74D;
@@ -74,15 +87,23 @@ header , #info , #head{
 
 }
 
+
+
 #info {
      margin-top: 15%;
 }
- #head { margin-top: 10%;}
+
+
+
+#head { 
+    margin-top: 10%;
+}
+
+
 
 button{
     cursor:pointer;
     background-color: #192557;
-    margin: 5%;
     font: 1em 'Trebuchet MS', sans-serif;
     border: none;
     transition: all 0.3s ease-in-out;
@@ -90,46 +111,37 @@ button{
     min-height: 35px; 
     min-width: 100px;
     
- }
+}
 
 
  
- a{
-     text-decoration: none;
-     color: #ffffff;
+a{
+    text-decoration: none;
+    color: #ffffff;
   
- }
+}
  
- button:hover {
+
+
+button:hover {
     background-color:#ff7878;
     transform: scale(1.1);
-    }
-    
- /* #logOutBtn {
-    position: absolute; 
-    top: -4%;
-    left: 85%;
-} */
+}
+
+
 
 #ADD {
-position: absolute;  
-left : 72%;
-top: 120%;
-min-width: 120px;
+    min-width: 120px;
 }
-table {
-    width: 80%;
-    padding: 5%;
+
+.btn{
+    position: relative;
+    left: 39%;
+}
+
+
+#h22 { 
+    align: left;
     margin-left:auto;
     margin-right:auto;
 }
-
-#h22 { align: left;
- margin-left:auto;
-    margin-right:auto;}
-
-div {
-    display: block;
-    align-items: center;
-}
-#btn {padding-bottom: 0.5%;}
