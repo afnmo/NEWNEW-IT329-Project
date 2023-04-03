@@ -186,7 +186,7 @@ a:hover{
     text-decoration: underline;
 }
 
-.login-submit{
+#login-submit{
     width: 100%;
     height: 45px;
     background: #162938;

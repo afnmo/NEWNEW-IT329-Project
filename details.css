@@ -4,7 +4,7 @@ body {
 
 
 h1 {
-  position: absolute;
+  /* position: absolute; */
   top: 6%;
   left:45%;
   color:  #192557;
@@ -17,7 +17,7 @@ h1 {
 div#btn{
     display: flex;
     flex-direction: row;
-    position: absolute; 
+    /* position: absolute;  */
     top: 90%;
     left: 30%;
  }
@@ -45,16 +45,17 @@ div#btn{
 #btn button:hover {
     background-color:#ff7878;
     transform: scale(1.1);
-    }
+}
    
-#logOutBtn {
+/* #logOutBtn {
     position: absolute; 
     top: -1350%;
     left: 300%;
 
-}
+} */
+
 #propImg img{
-    position: absolute;
+    /* position: absolute; */
     top: 150%;
     left: 16%;
     width: 65%;
@@ -70,8 +71,8 @@ img{
 .form-style-4{
 	width: 450px;
 	font-size: 16px;
-	padding: 30px 30px 15px 30px;
-    position: absolute;
+	/* padding: 30px 30px 15px 30px; */
+    /* position: absolute; */
     top: 23%;
     left: 25%;
     width: 600px;

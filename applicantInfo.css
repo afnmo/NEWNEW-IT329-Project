@@ -1,29 +1,18 @@
-body {
+/* body {
     background-color: #FAF7F2;
-}
-#logo{
-     /* (A) RESPONSIVE LOGO */
-     width: 80%;
-     height: auto;
- 
-     /* (B) RECOMMENDED - LIMIT MAXIMUM WIDTH */
-     max-width: 300px;
+} */
 
-    position: absolute;
-    left: -5%;
-    top: -10%;
-    
- 
-   
-}
 
 h1 {
-  position: absolute;
-  top: 6%;
-  left:40%;
+  margin-top: 10%;
+  margin-left: 40%;
+  margin-right: 40%;
+  /* position: absolute; */
+  /* top: 6%;
+  left:40%; */
   color:  #192557;
   font-size: 1.8em;
-  font-family:  Times, serif;
+  /* font-family:  Times, serif; */
  
 }
 
@@ -31,7 +20,7 @@ h1 {
 div#btn{
     display: flex;
     flex-direction: row;
-    position: absolute; 
+    /* position: absolute;  */
     top: 8%;
     left: 90%;
  }
@@ -61,21 +50,23 @@ div#btn{
     transform: scale(1.1);
     }
    
-#logOutBtn {
+/* #logOutBtn {
     position: absolute; 
     top: -1350%;
     left: 300%;
 
-}
-
-
+} */
 
 
 .form-Applicant{
+    
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
 	width: 450px;
 	font-size: 16px;
 	padding: 30px 30px 15px 30px;
-    position: absolute;
+    /* position: absolute; */
     top: 23%;
     left: 25%;
     width: 600px;

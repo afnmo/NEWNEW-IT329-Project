@@ -68,23 +68,7 @@ header , #info , #head{
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
-    
-}
-#logo{
-     /* (A) RESPONSIVE LOGO */
-     width: 80%;
-     height: auto;
- 
-     /* (B) RECOMMENDED - LIMIT MAXIMUM WIDTH */
-     max-width: 300px;
 
-    position: absolute;
-    left: -5%;
-    top: -900%;
-    
- 
-   
 }
 
 #info {
@@ -118,20 +102,17 @@ button{
     transform: scale(1.1);
     }
     
- #logOutBtn {
+ /* #logOutBtn {
     position: absolute; 
     top: -4%;
     left: 85%;
-
-}
+} */
 
 #ADD {
-position: absolute; 
+/* position: absolute;  */
 left : 70%;
 top: 130%;
 min-width: 120px;
-
-
 }
 table {
     width: 80%;
