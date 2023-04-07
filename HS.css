@@ -1,56 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-
-
-body{
-    background-color: beige;
-    justify-content: center;
+main,
+header {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 25%;
-    
+
 }
 
 
-table,th,tr,td
-{
+
+body {
+    justify-content: center;
+    background-color: #FAF7F2;
+
+}
+
+h1,
+h2 {
+    color: #192557
+}
+
+
+h2 {
+    padding: 0% 10%;
+    text-align: center;
+}
+
+th,
+tr,
+td {
+
     border: 2px solid;
     border-color: black;
     text-align: center;
     margin: auto;
     padding: 15px;
-    justify-content: center; 
+    justify-content: center;
+    color: #192557;
+    border-radius: 10px;
 }
-.a , .d , .property , .Rent, .Apl{
+
+table {
+    border-collapse: initial;
+    width: 80%;
+    padding: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.a,
+.d,
+.property,
+.Rent,
+.Apl {
     display: inline;
     cursor: pointer;
     text-decoration: underline;
     color: #9D9D9D;
 }
-.filter{
-    padding-left:85%;
+
+.filter {
+    padding-left: 85%;
 }
 
-#info  {
-     display: inline;
-     text-align: center;
+#info {
+    display: inline;
+    text-align: center;
 }
 
 th {
-    background-color: #FFDE59;
+    background-color: #E8B74D;
 }
 
 
 
-header , #info , #head{
+header,
+#info,
+#head {
     position: absolute;
     top: 0;
     left: 0;
@@ -59,69 +87,62 @@ header , #info , #head{
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
-    
+
+
 }
-#logo{
-    position: absolute;
-    width: min(50vw, 250px);
-    left: 0%;
-    top: -30%;
-    margin-bottom: 20%;
-   
-}
+
 
 #info {
-     margin-top: 15%;
+    margin-top: 15%;
 }
- #head { margin-top: 10%;}
 
-#btn1 {
-    position: relative;
-    left: 95%;
-    margin-top: 2%;
-    cursor:pointer;
-    background-color:#fee47a;
-    font: 1em sans-serif;
-    color: black;
+#head {
+    margin-top: 10%;
+}
+
+button {
+    cursor: pointer;
+    background-color: #192557;
+    margin: 5%;
+    font: 1em 'Trebuchet MS', sans-serif;
     border: none;
-    border-radius: 10%;
-       min-height: 30px; 
-    width: 60px;
-   
-    text-align: center;
- 
- text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 40px;
+    min-height: 35px;
+    min-width: 100px;
 
- }
+}
 
- 
- #ADD{
-      position: relative;
-    left: 80%;
-      cursor:pointer;
-    background-color:#fee47a;
-    font: 1em sans-serif;
-    color: black;
-    border: none;
-    border-radius: 10%;
-     height: 50px; 
-    width: 50px;
-    text-align: center;
-   text-decoration: none;
- }
- a#ADD:hover , a#btn1:hover {
-      background-color: #d1bb60;
-       transition: 0.5s;
- }
- 
- 
+button:hover {
+    background-color: #ff7878;
+    transform: scale(1.1);
+}
 
- #w{
-     background-color: greenyellow;
- }
- h3{
-     text-align: right;
-     color:#d1bb60;
- }
+#logOutBtn {
+    position: absolute;
+    top: -4%;
+    left: 85%;
 
+}
+
+
+h3 {
+    padding-left: 78%;
+    color: #d1bb60;
+
+}
+
+/* div {
+    display: block;
+    align-items: center;
+} */
+
+#btn {
+    padding-bottom: 0.5%;
+}
+
+.cb {
+    text-decoration: none;
+    color: #ffffff;
+
+}

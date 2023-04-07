@@ -1,12 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
+    <title>Edit Property </title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="base.css"> 
+    <link rel="stylesheet" href="edit.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img id="logo" src="images/Nuzl logo.png" alt="Nuzl logo" width="150"
+                    height="90" class="d-inline-block align-text-top"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prop">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Account">Account</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link link-danger" href="logIn.html">Log Out</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav> 
+    <main>
+
+            <h1>Property Information </h1>
+
+
+        <form class="form-style-4" action="" method="post">
+            <label for="field1">
+            <span>Property Name</span><input type="text" name="field1" value=" Holiday Villa"/>
+            </label>
+            <label for="field2">
+            <span>Category</span><input type="text" name="field2" value=" Villa"/>
+            </label>
+            <label for="field3">
+            <span> Number Of Rooms </span><input type="text" name="field3" value=" 6" />
+            </label>
+            <label for="field4">
+            <span>Rent</span><input type="text" name="field4" value=" 7000/month"/>
+            </label>
+            <br>
+            <label for="field5">
+            <span>Location</span><input type="text" name="field5" value=" Riyadh, AlAqeeq dist." />
+            </label>
+            <label for="field6">
+            <span>Max No. Of Tenants</span><input type="text" name="field6" value=" 6"/>
+            </label>
+            <label for="field7">
+            <span>Description</span><br><textarea name="field7" rows="4" cols="60">This villa is located in the AlAqeeq district of Riyadh and has six spacious rooms, each with its own unique design and amenities. The villa is ideal for families or groups of friends of up to six people looking for a luxurious stay in the city.</textarea>
+            </label>
+
+            <!-- <button type="button"> <a href="details.html"> Edit </a></button> -->
+
+        
+
+            <h2>Property Image</h2>
+            <p> <a class="ui" href=""> Upload images </a> </p>
+
+            <div class="images">
+                <table>
+                    <tr>
+                        <td><img src="Images/livingRoom.png" alt="house"></td>
+                        <td><img src="Images/homeDecor.png" alt="house"></td>
+                        <td><img src="Images/house2.png" alt="house"></td>
     
+                    </tr>
+    
+                    <tr>
+                        <td> <a class="Delete" href="">Delete</a></td>
+                        <td> <a class="Delete" href="">Delete</a></td>
+                        <td> <a class="Delete" href="">Delete</a></td>
+                    </tr>
+                </table>
+            </div>
+            
+
+            <button id="saveBtn" type="button"> <a href=" ">SAVE</a></button>
+
+        </form>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <p>&copy;2023 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+
+
 </body>
+
 </html>

@@ -1,33 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* font-family: 'Poppins', sans-serif; */
-    /* scroll-padding-top: 1rem;
-    scroll-behavior: smooth;
-    list-style: none;
-    text-decoration: none; */
-}
-
-/* img{
-    width: 100%;
-} */
-
-/* header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
 
 body{
-    background-color: beige;
+    /* background-color: beige; */
     justify-content: center;
     display: flex;
     align-items: center;
@@ -87,11 +60,12 @@ a:hover{
 
 .wrapper{
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     width: 400px;
+    bottom: 10%;
     /* height: 440px; */
     min-height: fit-content;
     background: transparent;
@@ -190,3 +164,14 @@ a:hover{
     font-weight: 500;
 
 }
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    /* padding-top: 150px; */
+    padding-bottom: 265px;
+}
+
