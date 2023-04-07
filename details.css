@@ -134,7 +134,7 @@ div#btn{
    
 }
 .form-style-4 label > span{
-	/* display: inline-block; */
+	 display: inline-block; 
 	width: 200px;
 }
 

@@ -82,6 +82,7 @@ table tr td img {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 18px;
 	color: #192557;;
+    padding-left: 3%;
 
 }
 .form-style-4 label {
@@ -90,7 +91,7 @@ table tr td img {
    
 }
 .form-style-4 label > span{
-	/* display: inline-block; */
+	display: inline-block; 
 	width: 200px;
 }
 
