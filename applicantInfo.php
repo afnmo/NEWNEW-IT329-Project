@@ -1,6 +1,6 @@
 <?php
 // Connect to database
-$connection = mysqli_connect("localhost", "root", "root", "nuzldb");
+$connection = mysqli_connect("localhost", "root", "root", "nuzl");
 $error = mysqli_connect_error();
 
 if ($error != null) {
