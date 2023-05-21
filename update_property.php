@@ -32,7 +32,7 @@ echo "No changes were made to the property information.";
 
 // Update the property images in the database
 if (!empty($_FILES["images"]["name"][0])) {
-$upload_dir = "Images";
+$upload_dir = "Images/";
 $allowed_extensions = array("jpg", "jpeg", "png", "gif");
 
 foreach ($_FILES["images"]["error"] as $key => $error) {
