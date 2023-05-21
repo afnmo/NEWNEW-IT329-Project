@@ -107,7 +107,8 @@ $unrented_properties_query = "SELECT p.*, c.category
                         <a class="nav-link" href="#Account">Account</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link link-danger" href="logIn.html">Log Out</a>
+                        <a class="nav-link link-danger" href="logout.php">Log Out</a>
+                        
                     </li>
 
                 </ul>
@@ -149,7 +150,7 @@ $unrented_properties_query = "SELECT p.*, c.category
         
       <td>
           <!-- check the name of the details page!! -->
-        <a href="details.php?id=<?php echo $application['property_id']; ?>"> 
+        <a href="propertyDetails.php?property_id=<?php echo $application['property_id']; ?>"> 
           <p class="property"><?php echo $application['property_name']; ?></p>
         </a>
       </td>
@@ -210,7 +211,7 @@ $unrented_properties_query = "SELECT p.*, c.category
           <?php foreach ($unrented_properties as $property) { ?>
             <tr> 
                 <!-- check the name of the details page!! -->
-              <td> <a href="details.php?id=<?php echo $property['id']; ?>"> <p class="property"> <?php echo $property['name']; ?> </p> </a></td>
+              <td> <a href="propertyDetails.php?property_id=<?php echo $property['id']; ?>"> <p class="property"> <?php echo $property['name']; ?> </p> </a></td>
               <td> <?php echo $property['category']; ?> </td>
               <td> <?php echo $property ["rent_cost"]; ?> </td>
               <td> <?php echo $property['rooms']; ?> </td>
