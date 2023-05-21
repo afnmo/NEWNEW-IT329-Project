@@ -1,5 +1,5 @@
 <?php
-
+        //1
         $connection = mysqli_connect("localhost", "root", "root", "nuzl");
         $error = mysqli_connect_error();
 
@@ -34,36 +34,37 @@
             exit();
         }
         else
+        { $property = mysqli_fetch_assoc($result); }
+        
+        //2
+        session_start(); //check user type and id 
+     /*   $_SESSION['userID']=1;
+        $_SESSION['role'] = 'homeseeker'; */
+
+        if (!isset($_SESSION['userID']) || !isset($_SESSION['role']))
         {
-            $property = mysqli_fetch_assoc($result);
-        }
-        //If the user is a homeseeker
-        session_start(); //check user type and id instaed of the default values
-        $_SESSION['user_type']='homeseeker';
-        //if(isset($_SESSION['user_type'])){
-        if($_SESSION['user_type']=='homeseeker'){
+            header('Location: homepage.html');
+            exit(); }
+           
+         
+        if ($_SESSION['role'] == 'homeseeker') 
+        {
             
         $homeowner_name = $property['homeowner_name'];
         $phone_number = $property['phone_number'];
         $email_address = $property['email_address'];
         
-        //see if he did apply to the property
-        //$home_seeker_id = $_SESSION['home_seeker_id'];
-        $_SESSION['home_seeker_id']=2;
-        $home_seeker_id = $_SESSION['home_seeker_id'];
+        //check if he did apply to the property
+         $home_seeker_id =$_SESSION['userID'];
          $query3 = "SELECT id FROM RentalApplication WHERE property_id = $property_id AND home_seeker_id = $home_seeker_id";
          $result3 = mysqli_query($connection, $query3);
 
             if (!$result3) {
             echo "Failed to retrieve property information from the database: " . mysqli_error($connection);
-            exit();
-        }
-        }
-         } }
-         //}
-         
+            exit(); } }  
+        
          $query_images = "SELECT * FROM PropertyImage WHERE property_id = $property_id";
-         $result_images = mysqli_query($connection, $query_images);
+        $result_images = mysqli_query($connection, $query_images); }}
          
        ?>
 
@@ -115,7 +116,7 @@
   
     <form class="form-style-4" action="" method="post">
         <label for="field1">
-        <span>Property Name</span><input type="text" name="field1" value="<?php echo $property['name']; ?>"/>
+        <span>Property Name</span><input type="text" name="field1" value="<?php echo $property['name'];?>"/>
         </label>
         <label for="field2">
         <span>Category</span><input type="text" name="field2" value="<?php echo $property2['category']; ?>"/>
@@ -154,7 +155,7 @@
     
         <div id="homeowner-info" style="text-align: center; margin-bottom: 5%; margin-top: 5%;">     
         <?php
-          if ($_SESSION['user_type'] == 'homeseeker') {
+          if ($_SESSION['role'] == 'homeseeker') {
             if ($result2 == false || mysqli_num_rows($result2) == 0) {
               echo "<p>No homeowner found with id $property_homeowne_id</p>";
             } else {
@@ -171,7 +172,7 @@
 
    <div id="btn" style="margin-top: 5%;" >
     <?php 
-        if ($_SESSION['user_type'] == 'homeseeker') {
+        if ($_SESSION['role'] == 'homeseeker') {
             if (mysqli_num_rows($result3) == 0) //change the url
             {  echo '<button class="button-grow"><a href="HomeSeeker.php?property_id=' . $property_id . '">Apply</a></button>';}
         } else {
