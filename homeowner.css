@@ -1,0 +1,147 @@
+
+main , header{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; 
+    margin-top: 25%;
+   
+}
+
+
+body {
+    justify-content: center;
+    background-color: #FAF7F2;
+}
+
+
+h1 , h2 {
+    color: #192557;
+}
+
+
+h2{
+    padding: 0% 10% ;
+    text-align: center;
+}
+
+
+.RA table,
+.RA th,
+.RA tr,
+.RA td ,
+.LP table,
+.LP th,
+.LP tr,
+.LP td 
+{
+    border:   2px solid; 
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    justify-content: center; 
+    color: #192557;
+    border-radius: 10px;
+}
+
+
+table {
+    margin-bottom: 10px;
+    border-collapse:initial;
+    width: 80%;
+    padding: 5%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+.a , .d , .property , .applicant, .del{
+    display: inline;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #9D9D9D;
+}
+
+
+
+#info {
+     display: inline;
+     text-align: center;
+}
+
+
+
+.LP th, .RA th {
+    background-color: #E8B74D;
+}
+
+
+header , #info , #head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+#info {
+     margin-top: 15%;
+}
+
+
+
+#head { 
+    margin-top: 10%;
+}
+
+
+
+button{
+    cursor:pointer;
+    background-color: #192557;
+    font: 1em 'Trebuchet MS', sans-serif;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 40px;
+    min-height: 35px; 
+    min-width: 100px;
+    
+}
+
+
+ 
+a{
+    text-decoration: none;
+    color: #ffffff;
+  
+}
+ 
+
+
+button:hover {
+    background-color:#ff7878;
+    transform: scale(1.1);
+}
+
+
+
+#ADD {
+    min-width: 120px;
+}
+
+.btn{
+    position: relative;
+    left: 39%;
+}
+
+
+#h22 { 
+    align: left;
+    margin-left:auto;
+    margin-right:auto;
+}

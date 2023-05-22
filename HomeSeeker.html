@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HomeSeeker page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="base.css"> 
+    <link rel="stylesheet" href="HS.css">
+    <script src="HS.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img id="logo" src="images/Nuzl logo.png" alt="Nuzl logo" width="150"
+                    height="90" class="d-inline-block align-text-top"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Account</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link link-danger" href="homepage.html">Log Out</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav> 
+
+    <div id="head">
+        <h1 id="h1_ho"> Hello Rahaf Alnassrallah </h1>
+    </div>
+
+    <div id="info">
+        <p id="p1"> Name of the seeker: Rahaf Alnassrallah </p>
+        <p id="p4"> Number of family members: 4 </p>
+        <p id="p2"> Email: rahaf@gmail.com </p>
+        <p id="p3"> Phone number: 0565694491 </p>
+    </div>
+
+    <main>
+
+        <h2> Requested Homes</h2>
+        <table id="RH">
+
+            <thead>
+                <tr>
+                    <th> Property name </th>
+                    <th> Category </th>
+                    <th> Rent </th>
+                    <th> Status </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="p"> <a href="details.html">
+                            <p class="property"> Al-Yasmeen Home </p>
+                        </a> </td>
+                    <td class="c"> Villa </td>
+                    <td class="r"> 6000/months</td>
+                    <td> under consideration </td>
+                    <td> <input id="withdrawBtn" type="button" value="withdraw" onclick="deleteRow(this)"> </td>
+
+                </tr>
+
+                <tr>
+                    <td><a href="details.html">
+                            <p class="property">Al-Hittin plaza</p>
+                        </a></td>
+                    <td> Apartment</td>
+                    <td>3000/month</td>
+                    <td> Accepted </td>
+                    <td></td>
+
+
+                </tr>
+
+                <tr>
+                    <td> <a href="details.html">
+                            <p class="property"> AlNakheel Home </p>
+                        </a> </td>
+                    <td> villa </td>
+                    <td> 5000/month </td>
+                    <td> declined</td>
+                    <td> </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+
+        <br> <br>
+        <h2> Homes For Rent </h2>
+
+        <h3>Search By Category</h3>
+        <div class="filter">
+
+            <select id="mylist" onchange="myFunction()" class='form-control'>
+                <option value="">All</option>
+                <option value="Apartment"> Apartment
+                </option>
+                <option value="Villa"> Villa
+                </option>
+            </select>
+        </div>
+
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th> Property Name </th>
+                    <th> Category </th>
+                    <th> Rent </th>
+                    <th> Rooms </th>
+                    <th> Location </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td> <a href="details.html">
+                            <p class="property"> Noors Home </p>
+                        </a></td>
+                    <td> Apartment </td>
+                    <td> 5500/month </td>
+                    <td> 6 </td>
+                    <td> Riyadh, AlNarjies dist.</td>
+                    <td>
+                        <p class="Apl"><a href=""> Apply</a> </p>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td> <a href="details.html"> <p class="property"> Holiday Villa </p> </a> </td>
+                    <td> Villa </td>
+                    <td> 7000/month </td>
+                    <td> 4</td>
+                    <td> Riyadh, AlAqeeq dist.</td>
+                    <td>
+                        <p class="Apl"> <a href="">Apply </a></p>
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <p>&copy;2023 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+
+</html>

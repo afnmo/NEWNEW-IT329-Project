@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+main,
+header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 25%;
+
+}
+
+
+
+body {
+    justify-content: center;
+    background-color: #FAF7F2;
+
+}
+
+h1,
+h2 {
+    color: #192557
+}
+
+
+h2 {
+    padding: 0% 10%;
+    text-align: center;
+}
+
+th,
+tr,
+td {
+
+    border: 2px solid;
+    border-color: black;
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    justify-content: center;
+    color: #192557;
+    border-radius: 10px;
+}
+
+table {
+    border-collapse: initial;
+    width: 80%;
+    padding: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.a,
+.d,
+.property,
+.Rent,
+.Apl {
+    display: inline;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #9D9D9D;
+}
+
+.filter {
+    padding-left: 85%;
+}
+
+#info {
+    display: inline;
+    text-align: center;
+}
+
+th {
+    background-color: #E8B74D;
+}
+
+
+
+header,
+#info,
+#head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+
+#info {
+    margin-top: 15%;
+}
+
+#head {
+    margin-top: 10%;
+}
+
+button {
+    cursor: pointer;
+    background-color: #192557;
+    margin: 5%;
+    font: 1em 'Trebuchet MS', sans-serif;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 40px;
+    min-height: 35px;
+    min-width: 100px;
+
+}
+
+button:hover {
+    background-color: #ff7878;
+    transform: scale(1.1);
+}
+
+#logOutBtn {
+    position: absolute;
+    top: -4%;
+    left: 85%;
+
+}
+
+
+h3 {
+    padding-left: 78%;
+    color: #d1bb60;
+
+}
+
+/* div {
+    display: block;
+    align-items: center;
+} */
+
+#btn {
+    padding-bottom: 0.5%;
+}
+
+.cb {
+    text-decoration: none;
+    color: #ffffff;
+
+}

@@ -1,0 +1,158 @@
+
+h1{
+
+  text-align: center;
+  margin-top: 10%;
+  color: #192557;
+  font-size: 1.8em;
+  font-family:  Times, serif;
+}
+
+
+h2{
+  color:  #192557;
+  font-size: 1.8em;
+  font-family:  Times, serif;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.item {
+  margin: 10px;
+  text-align: center;
+}
+
+.item img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.delete {
+  display: block;
+  margin-top: 5px;
+  background-color:#192557;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.delete:hover {
+  background-color: #d32f2f;
+}
+
+button#saveBtn {
+  cursor: pointer;
+  background-color: #ECD884;
+  margin: 2%;
+  font: 1em 'Trebuchet MS', sans-serif;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 40px;
+  height: 40px;
+  width: 90px;
+}
+
+#saveBtn a,
+.ui a,
+tr td a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.ui {
+  padding-left: 78%;
+  color: #ECD884;
+}
+
+button:hover {
+  background-color: #ff7878;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .item img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+.form-style-4{
+    margin-bottom: 5%;
+    font-size: 16px;
+    padding: 30px 30px 15px 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 1000px;
+    background-color: #FAF7F2;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    line-height: 260%;
+    border-radius: 20px;
+}
+
+.form-style-4 input[type=text],
+.form-style-4 label
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	color: #192557;;
+        padding-left: 20%;
+
+}
+.form-style-4 label {
+	/* display:block; */
+	margin-bottom: 10px;
+   
+}
+.form-style-4 label > span{
+	display: inline-block; 
+	width: 200px;
+}
+
+.form-style-4 input[type=text] 
+{
+    text-align: center;
+    /* pointer-events: none; */
+	background: transparent;
+	border: none;
+	border-bottom: 1px dashed #83A4C5;
+	width: 275px;
+	outline: none;
+	padding: 0px 0px 0px 0px;
+}
+
+.form-style-4 textarea{
+    text-align: center;
+    /* pointer-events: none; */
+    background-color: #FAF7F2;
+    line-height: 1.2em;
+    font-size: 1em;
+    padding: 2% 0;
+    font-family:  Times, serif;
+    color: #192557;
+    /* height: 130px; */
+	
+}
+
+.Delete{
+   font-family:  Times, serif;
+   border: 2px solid;
+}
+
+.Delete:hover {
+
+  background-color: #ff7878;
+  transform: scale(1.1);
+}
+
