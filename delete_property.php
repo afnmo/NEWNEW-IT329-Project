@@ -1,7 +1,16 @@
 <?php 
+session_start();
 // Create a new mysqli object to establish a connection
 $conn = mysqli_connect("localhost", "root", "root", "nuzl");
 
+ // Check if the user is logged in
+  if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
+}
 // Check if the connection was successful
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);}
