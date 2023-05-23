@@ -274,7 +274,7 @@ while ($row4 = mysqli_fetch_array($rerr)){
                     <td> <?php echo $rooms_prop ;?> </td>
                     <td> <?php echo $loc_prop ;?></td>
                    <td>
-                      <a href="apply.php?id1=<?php $id_rent; ?>&id2=<?php echo $id_prop?>&id3=<?php echo $ID_HS?>" >Apply</a>
+                    <a href="apply.php?id1=<?php $id_rent; ?>&id2=<?php echo $id_prop?>&id3=<?php echo $ID_HS?>" >Apply</a>
                   </td> 
                        
             

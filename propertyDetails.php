@@ -47,15 +47,15 @@ exit();
         { $property = mysqli_fetch_assoc($result); }
         
         //2
-        session_start(); //check user type and id 
-     /*   $_SESSION['userID']=1;
-        $_SESSION['role'] = 'homeseeker'; */
-
-        if (!isset($_SESSION['userID']) || !isset($_SESSION['role']))
-        {
-            header('Location: homepage.html');
-            exit(); }
-           
+//        session_start(); //check user type and id 
+//     /*   $_SESSION['userID']=1;
+//        $_SESSION['role'] = 'homeseeker'; */
+//
+//        if (!isset($_SESSION['userID']) || !isset($_SESSION['role']))
+//        {
+//            header('Location: homepage.html');
+//            exit(); }
+//           
          
         if ($_SESSION['role'] == 'HomeSeeker') 
         {
@@ -71,7 +71,9 @@ exit();
 
             if (!$result3) {
             echo "Failed to retrieve property information from the database: " . mysqli_error($connection);
-            exit(); } }  
+            exit(); } 
+            
+            }  
         
          $query_images = "SELECT * FROM PropertyImage WHERE property_id = $property_id";
         $result_images = mysqli_query($connection, $query_images); }}
@@ -165,7 +167,7 @@ exit();
     
         <div id="homeowner-info" style="text-align: center; margin-bottom: 5%; margin-top: 5%;">     
         <?php
-          if ($_SESSION['role'] == 'homeseeker') {
+          if ($_SESSION['role'] == 'HomeSeeker') {
             if ($result2 == false || mysqli_num_rows($result2) == 0) {
               echo "<p>No homeowner found with id $property_homeowne_id</p>";
             } else {
@@ -182,9 +184,13 @@ exit();
 
    <div id="btn" style="margin-top: 5%;" >
     <?php 
-        if ($_SESSION['role'] == 'homeseeker') {
+        if ($_SESSION['role'] == 'HomeSeeker') {
             if (mysqli_num_rows($result3) == 0) //change the url
-            {  echo '<button class="button-grow"><a href="HomeSeeker.php?property_id=' . $property_id . '">Apply</a></button>';}
+            {  $seekerID = $_SESSION['userID'];
+                
+                echo '<button class="button-grow"> <a href=apply.php?id2='.$property_id.'&id3='. $seekerID.'>Apply</a></button>';}
+               
+                
         } else {
         echo '<button class="button-grow"><a href="editProperty.php?property_id=' . $property_id . '">Edit</a></button>';}
     ?>
