@@ -173,7 +173,7 @@ $id=$row1['id'];
             </tbody>
 
         </table>
-            <?php} ?>
+
 
       <!-- done second step -->  
         
@@ -465,7 +465,7 @@ while ($row4 = mysqli_fetch_array($rerr)){
         </div>
     </footer> 
              
-                    <?php
+<?php
     mysqli_close($con);?>
 
  </body>
