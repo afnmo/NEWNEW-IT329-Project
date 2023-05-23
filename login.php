@@ -86,11 +86,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION['role'] = $userRole;
                         
                         if($userRole == "HomeSeeker"){
-                            header("Location: HomeSeeker.html");
+                            header("Location: homeseeker.php");
                             exit();
                         }
                         else{
-                            header("Location: Homeowner.html");
+                            header("Location: HomeOwner.php");
                             exit();
                         }
                     } else {
@@ -102,7 +102,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //              failed - to find in database
                 else {
                     // no results
-                    echo "Not exist in the database<br>";
+                    header('Location: login.php?error=not_exists');
+                    exit();
+//                    echo "Not exist in the database<br>";
                 }
 
             }

@@ -1,4 +1,14 @@
 <?php
+
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['userID']) || !isset($_SESSION['role'])) 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
+}
         //1
         $connection = mysqli_connect("localhost", "root", "root", "nuzl");
         $error = mysqli_connect_error();
@@ -47,7 +57,7 @@
             exit(); }
            
          
-        if ($_SESSION['role'] == 'homeseeker') 
+        if ($_SESSION['role'] == 'HomeSeeker') 
         {
             
         $homeowner_name = $property['homeowner_name'];
@@ -103,7 +113,7 @@
                         <a class="nav-link" href="#">Account</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link link-danger" href="homepage.html">Log Out</a>
+                        <a class="nav-link link-danger" href="logout.php">Log Out</a>
                     </li>
 
                 </ul>

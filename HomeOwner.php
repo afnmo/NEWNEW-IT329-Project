@@ -1,5 +1,14 @@
 <?php
 session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
+}
 // Create a database connection
 ini_set("display_errors", 1);
 $conn = mysqli_connect("localhost", "root", "root", "nuzl");
@@ -8,14 +17,7 @@ $conn = mysqli_connect("localhost", "root", "root", "nuzl");
     die("Connection failed: " . mysqli_connect_error());
   }
 
-// Check if the user is logged in
-  if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
-{ 
 
-header('Location: homepage.html');
-exit(); 
-
-}
 
   // Retrieve the homeowner's information from the database
   $homeowner_id = $_SESSION['userID'];

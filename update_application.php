@@ -1,4 +1,13 @@
 <?php
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
+}
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 

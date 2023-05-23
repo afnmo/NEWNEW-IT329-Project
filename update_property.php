@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
+}
 // Connect to the database
 $conn = mysqli_connect("localhost", "root", "root", "nuzl");
 
@@ -19,7 +29,9 @@ $location = $_POST["location"];
 $max_tenants = $_POST["max_tanants"];
 $description = $_POST["description"];
 
-$sql = "UPDATE Property SET name='$name', property_category_id='$category_id', rooms='$rooms', rent_cost='$rent_cost', location='$location', max_tanants='$max_tenants', description='$description' WHERE id=$property_id";
+$sql = "UPDATE property SET name='$name', property_category_id='$category_id', rooms='$rooms', "
+        . "rent_cost='$rent_cost', location='$location', max_tanants='$max_tenants', "
+        . "description='$description' WHERE id=$property_id";
 mysqli_query($conn, $sql);
 echo $sql;
 

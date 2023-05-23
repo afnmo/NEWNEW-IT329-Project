@@ -1,4 +1,16 @@
  <?php
+ 
+ session_start();
+ 
+ 
+// Check if the user is logged in
+if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
+}
     // Connect to the database
     $conn = mysqli_connect("localhost", "root", "root", "nuzl");
 
@@ -19,10 +31,10 @@
         echo "No property found.";
         exit;
     }
-     
+
     $query_images = "SELECT * FROM PropertyImage WHERE property_id = $property_id";
     $result_images = mysqli_query($conn, $query_images);
-    
+
 
     // Close the database connection
     mysqli_close($conn);
@@ -60,7 +72,7 @@
                     <a class="nav-link" href="#">Account</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link link-danger" href="homepage.html">Log Out</a>
+                    <a class="nav-link link-danger" href="logout.php">Log Out</a>
                 </li>
             </ul>
         </div>
@@ -68,10 +80,9 @@
 </nav>
 <main>
     <h1>Property Information</h1>
-    
+
     <form class="form-style-4" action="update_property.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="property_id" value="<?php echo $property["id"]; ?>">
-         <input type="hidden" name="category_id" value="<?php echo $property['property_category_id']; ?>">
+        <input type="hidden" name="property_id" value="<?php echo $property_id; ?>">
         <label for="name">
             <span>Property Name</span>
             <input type="text" name="name" value="<?php echo $property["name"]; ?>" >
@@ -88,7 +99,7 @@
 
         $query_categories = "SELECT * FROM PropertyCategory";
         $result_categories = mysqli_query($conn, $query_categories);
-        
+
         while ($row = mysqli_fetch_assoc($result_categories)) {
           $category_id = $row["id"];
           $category_name = $row["category"];
@@ -122,10 +133,12 @@
             <span>Description</span><br>
             <textarea name="description" rows="4" cols="60"><?php echo $property["description"]; ?></textarea>
         </label>
-        <h2>Property Images</h2>
-        <p><a class="ui" href="">Upload images</a></p>
         
+        <h2>Property Images</h2>
+<!--        <p><a class="ui" href="">Upload images</a></p>-->
 
+
+        
          <div class="images">
         <?php  
         if (!$result_images || mysqli_num_rows($result_images) == 0) {
@@ -145,9 +158,10 @@
         }
         ?>
       </div>
-          
+
         <input type="file" name="images[]" multiple>
-        <button id="saveBtn" type="submit">SAVE</button>
+        <button id="saveBtn" type="submit" style="float: right">SAVE</button>
+        
     </form>
 </main>
 <footer class="footer">
@@ -183,4 +197,3 @@
     </div>
 </footer>
 </body>
-</html>

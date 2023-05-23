@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
+}
 // Connect to the database
 $conn = mysqli_connect("localhost", "root", "root", "nuzl");
 // Check if the connection was successful

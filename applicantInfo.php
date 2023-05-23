@@ -1,7 +1,18 @@
 <?php
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
+}
 // Connect to database
 $connection = mysqli_connect("localhost", "root", "root", "nuzl");
 $error = mysqli_connect_error();
+
+
 
 if ($error != null) {
     echo "<p>Could not connect to the database.</p>";
@@ -73,7 +84,7 @@ if ($error != null) {
                     <a class="nav-link" href="#Account">Account</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link link-danger" href="homepage.html">Log Out</a>
+                    <a class="nav-link link-danger" href="logout.php">Log Out</a>
                 </li>
 
             </ul>

@@ -1,93 +1,16 @@
 <?php
 session_start();
-// Establish a database connection
-$dbhost = 'localhost';
-$dbname = 'nuzl';
-$dbuser = 'root';
-$dbpass = 'root';
 
-if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != "Homeowner") {
-    header('Location: homepage.html');
-    exit();
-}
-$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-$error = mysqli_connect_error();
-if ($error != null) {
-    echo "<p> Cannot connect with DataBase </p>";
+// Check if the user is logged in
+if (!isset($_SESSION['userID']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'Homeowner') 
+{ 
+
+header('Location: homepage.html');
+exit(); 
+
 }
 
-
-
-// Check if the form has been submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $result = mysqli_query($connection, "SELECT id FROM propertyCategory WHERE category = '" . $_POST['category'] . "'");
-    $resultArray = mysqli_fetch_all($result);
-    $category_id = $resultArray[0][0];
-
-    // Set the values of the parameters
-    $homeowner_id = $_SESSION['userID']; // Replace with the ID of the logged-in homeowner
-    $name = $_POST["name"];
-    $rooms = $_POST["Rooms"];
-    $rent_cost = $_POST["rent"];
-    $location = $_POST["location"];
-    $max_tenants = $_POST["tenants"];
-    $description = $_POST["description"];
-
-    $sql = "INSERT INTO property (homeowner_id, property_category_id, name, rooms, rent_cost, location, max_tanants, description) "
-            . "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
-
-    if ($statement = mysqli_prepare($connection, $sql)) {
-        mysqli_stmt_bind_param($statement, "iisiisis", $homeowner_id, $category_id,
-                $name, $rooms, $rent_cost, $location, $max_tenants, $description);
-        if (mysqli_stmt_execute($statement)) {
-//            successfully executed
-//            get the last inserted id by the last query, (insert query above) in this case
-//            only works with auto increment
-            $property_id = mysqli_insert_id($connection);
-        } else {
-//            failed execute insert query
-        }
-    } else {
-//        failed prepare statement
-    }
-
-
-
-    // Update the property images in the database
-    if (!empty($_FILES["images"]["name"][0])) {
-        $upload_dir = "Images/";
-        $allowed_extensions = array("jpg", "jpeg", "png", "gif");
-
-        foreach ($_FILES["images"]["error"] as $key => $error) {
-            if ($error == UPLOAD_ERR_OK) {
-                $tmp_name = $_FILES["images"]["tmp_name"][$key];
-                $name = $_FILES["images"]["name"][$key];
-
-                // Check if the file has a valid extension
-                $extension = strtolower(pathinfo($name, PATHINFO_EXTENSION));
-                if (in_array($extension, $allowed_extensions)) {
-                    // Generate a unique filename
-                    $filename = uniqid() . "." . $extension;
-
-                    // Move the file to the upload directory
-                    move_uploaded_file($tmp_name, $upload_dir . $filename);
-
-                    // Insert the image record into the database
-                    $sql = "INSERT INTO PropertyImage (path, property_id) VALUES ('$upload_dir$filename', $property_id)";
-                    mysqli_query($conn, $sql);
-                }
-            }
-        }
-    }
-
-    // Redirect the user to the new property details page
-    // make sure the name is correct!
-    header("Location: propertyDetails.php?id=" . $id);
-    exit();
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -131,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <a class="nav-link" href="#Account">Account</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link link-danger" href="logIn.html">Log Out</a>
+                            <a class="nav-link link-danger" href="logout.php">Log Out</a>
                         </li>
 
                     </ul>
@@ -143,10 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1 id="addText"> Add A Property </h1>
 
 
-        <form class="form_Add" action="addProperty.php" method="post">
+        <form class="form_Add" action="add_Property.php" method="POST" enctype="multipart/form-data">
+         <input type="hidden" name="property_id" value="<?php echo $property["id"]; ?>">
+         <input type="hidden" name="category_id" value="<?php echo $property['property_category_id']; ?>">
             <fieldset>
                 <legend> Property Details </legend>
-                <i class="fa fa-home"></i> <label for="name"> Property Name:</label><br>
+                <i class="fa fa-home"></i> <label for="name"> Property Name: </label><br>
                 <input type="text" id="name" name="name" required><br>
 
                 <p> <i class="fa fa-home"></i> Category:
@@ -158,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-                <i class="fa fa-home"></i> <label for="location"> Location:</label><br>
+                <i class="fa fa-home"></i> <label for="location"> Location: </label><br>
                 <input type="text" id="location" name="location" required><br>
 
                 <i class="fa fa-home"></i> <label for="Rooms"> Number of rooms:</label><br>
@@ -177,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <br>
 
                 <p> <i class="fa fa-home"></i> Upload Pictures Of The Property:</P> 
-                <input type="file" id="pic1" name="pic1" accept="image/jpeg, image/png, image/jpg" required> <br>
+                 <input type="file" id="pic1" name="images[]" multiple accept="image/jpeg, image/png, image/jpg" required>
                 <br>
             </fieldset>
             <br>
@@ -190,9 +115,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         </form>
-        <div id="btn">
-            <button id="logOutBtn"><a href="homepage.html"> Log out </a></button>
-        </div>
 
         <footer class="footer">
             <div class="container">
@@ -231,5 +153,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script> 
 
     </body>
-
-</html>

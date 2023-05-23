@@ -1,4 +1,5 @@
 <?php
+session_start();
 define('DBHOST', 'localhost');
 define('DBNAME', 'nuzl');
 define('DBUSER', 'root');
@@ -60,7 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Execute the statement
                 if (mysqli_stmt_execute($stmt)) {
-                    header('Location: signup.php?inserted successfully');
+                    $id = mysqli_insert_id($connection);
+                    $_SESSION['userID'] = $id;
+                    header('Location: Homeseeker.php');
                     exit();
                 } else {
                     header('Location: signup.php?failedInsertion');
@@ -122,43 +125,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="signup.php" method="POST">
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-user"></i></span>
-                        <input type="text" name="first_name" required>
+                        <input type="text" name="first_name" onclick="hideErrorMessage()" required>
                         <label>First Name</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-user"></i></span>
-                        <input type="text" name="last_name" required>
+                        <input type="text" name="last_name" onclick="hideErrorMessage()" required>
                         <label>Last Name</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"></span>
-                        <input type="number" name="age" min="1" max="100" required>
+                        <input type="number" name="age" min="1" max="100" onclick="hideErrorMessage()" required>
                         <label>Age</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-family-pants"></i></span>
-                        <input type="number" name="family_members" min="1" max="20" required>
+                        <input type="number" name="family_members" min="1" max="20" onclick="hideErrorMessage()" required>
                         <label>Number of family members</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-money-bill"></i></span>
-                        <input type="text" name="income" required>
+                        <input type="text" name="income" onclick="hideErrorMessage()" required>
                         <label>Income</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"></span>
-                        <input type="text" name="job" required>
+                        <input type="text" name="job" onclick="hideErrorMessage()"  required>
                         <label>Job</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-phone"></i></span>
-                        <input type="tel" name="phoneNo" required>
+                        <input type="tel" name="phoneNo" onclick="hideErrorMessage()" required>
                         <label>Phone Number</label>
                     </div>
 
@@ -174,13 +177,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                        <input type="email" name="email" required>
+                        <input type="email" name="email" onclick="hideErrorMessage()" required>
                         <label>Email</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                        <input type="password" name="password" required>
+                        <input type="password" name="password" onclick="hideErrorMessage()" required>
                         <label>Password</label>
                     </div>
 

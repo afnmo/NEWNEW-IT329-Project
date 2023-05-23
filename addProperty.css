@@ -52,12 +52,7 @@ button#logOutBtn:hover,
     transform: scale(1.1);
 }
 
-#logOutBtn {
-    position: absolute;
-    top: -1350%;
-    left: 300%;
 
-}
 
 .form_Add {
     display: flex;
