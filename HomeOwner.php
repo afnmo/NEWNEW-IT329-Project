@@ -86,7 +86,7 @@ $unrented_properties_query = "SELECT p.*, c.category
     <link rel="stylesheet" href="homeowner.css"> 
     <script src="https://kit.fontawesome.com/5ccf46ed5e.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -222,16 +222,93 @@ $unrented_properties_query = "SELECT p.*, c.category
               <td> <?php echo $property['rooms']; ?> </td>
               <td> <?php echo $property['location']; ?> </td>
               <td> 
-                <form action="delete_property.php" method="post">
-                  <input type="hidden" name="property_id" value="<?php echo $property['id']; ?>">
-                  <button type="submit" name="delete" class="d"> Delete </button>
-                </form>
+               <form action="delete_property.php" method="post" name="delete_property">
+                <input type="hidden" name="property_id" value="<?php echo $property['id']; ?>">
+                <button type="button" id="delete_button" class="d"> Delete </button>
+               </form>
               </td>
             </tr>
           <?php } ?>
         </tbody>
           </table>
       
+        
+        <script> 
+  $(document).ready(function() {
+    // Add click event listener to the 'Accept' and 'Decline' buttons
+    $('.a, .d').on('click', function(e) {
+      e.preventDefault(); // Prevent the default form submission
+
+      // Get the application ID, property ID, and the button value (accept or decline)
+      var applicationID = $(this).siblings('[name="application_id"]').val();
+      var propertyID = $(this).siblings('[name="property_id"]').val();
+      var buttonValue = $(this).val();
+
+      // Send an AJAX request to the PHP page
+      $.ajax({
+        url: 'update_application.php',
+        type: 'POST',
+        data: {
+          application_id: applicationID,
+          property_id: propertyID,
+          action: buttonValue
+        },
+        success: function(response) {
+          // If the update was successful, update the status in the table
+          if (response == true) {
+            // Get the status cell and update the text
+            var statusCell = $(this).closest('tr').find('td:nth-child(4)');
+            statusCell.text(buttonValue);
+          }
+        }.bind(this) // Bind the success callbackfunction to the clicked button element 
+      });
+    });
+  });
+</script>
+
+<script>
+ $(document).ready(function() {
+  $('form[name="delete_property"]').submit(function(e) {
+    e.preventDefault(); // Prevent the default form submission
+    var form = $(this);
+    var property_id = form.find('input[name="property_id"]').val();
+    
+    // Send an AJAX request to the PHP page
+    $.ajax({
+      url: form.attr('action'),
+      type: 'POST',
+      data: {
+        property_id: property_id
+      },
+      success: function(response) {
+        // If the deletion was successful, update the table
+        if (response == true) {
+          // Reload the table data using an AJAX request
+          $.ajax({
+            url: 'get_properties.php',
+            success: function(data) {
+              // Update the table HTML with the new data
+              $('table[name="property_table"]').html(data);
+            },
+            error: function(xhr, status, error) {
+              // Handle the error case here
+            }
+          });
+        }
+      },
+      error: function(xhr, status, error) {
+        // Handle the error case here
+      }
+    });
+  });
+
+  // Add a click event listener to the delete button
+  $('.d').click(function() {
+    var form = $(this).closest('form[name="delete_property"]');
+    form.submit(); // Submit the form when the delete button is clicked
+  });
+});
+</script>
     </main>
 
     <footer class="footer">
@@ -260,12 +337,15 @@ $unrented_properties_query = "SELECT p.*, c.category
                         <a href="#"><i class="bi bi-twitter"></i></a>
                         <a href="#"><i class="bi bi-instagram"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="update_application.php"></a>
                     </div>
                 </div>
                 <p>&copy;2023 All Rights Reserved</p>
             </div>
         </div>
     </footer> 
+
+    
 
 </body>
 </html>
