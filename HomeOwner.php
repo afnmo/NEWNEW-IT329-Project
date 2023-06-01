@@ -149,8 +149,9 @@ $unrented_properties_query = "SELECT p.*, c.category
            
             <tbody>
           <?php if (isset($rental_applications)) {
-              
-  foreach ($rental_applications as $application) {  ?>
+              $count=0;
+  foreach ($rental_applications as $application) {  
+      $count++; ?>
     <tr>
         
       <td>
@@ -172,15 +173,15 @@ $unrented_properties_query = "SELECT p.*, c.category
           
       
       
-      <td><?php echo $application['status']; ?></td>
-      <td> 
+      <td id="status<?php echo $count;?>"><?php echo $application['status']; ?></td>
+      <td id="buttons<?php echo $count;?>"> 
         <?php if ($application['status'] == 'under consideration') { ?>
-  <form action="update_application.php" method="post">
+ 
     <input type="hidden" name="application_id" value="<?php echo $application['id']; ?>">
     <input type="hidden" name="property_id" value="<?php echo $application['property_id']; ?>">
-    <button type="submit" name="action" value="accept" class="a"> Accept </button>
-    <button type="submit" name="action" value="decline" class="d"> Decline </button>
-  </form>
+    <button type="submit" name="action" value="accept" class="a" onclick="changeStatus(this.value,<?php echo $application['id']?>,<?php echo $count?>,<?php echo $application['property_id']?>)"> Accept </button>
+    <button type="submit" name="action" value="decline" class="d" onclick="changeStatus(this.value,<?php echo $application['id']?>,<?php echo $count?>,<?php echo $application['property_id']?>)"> Decline </button>
+  
 <?php } ?>
 
       </td>
@@ -213,101 +214,57 @@ $unrented_properties_query = "SELECT p.*, c.category
             </thead>
             
             <tbody>
-          <?php foreach ($unrented_properties as $property) { ?>
+                 <?php if (isset($unrented_properties)) {
+          $count2=0;
+          foreach ($unrented_properties as $property) {
+              $count2++;
+              ?>
             <tr> 
                 <!-- check the name of the details page!! -->
-              <td> <a href="propertyDetails.php?property_id=<?php echo $property['id']; ?>"> <p class="property"> <?php echo $property['name']; ?> </p> </a></td>
-              <td> <?php echo $property['category']; ?> </td>
-              <td> <?php echo $property ["rent_cost"]; ?> </td>
-              <td> <?php echo $property['rooms']; ?> </td>
-              <td> <?php echo $property['location']; ?> </td>
+              <td id="Pinfoo<?php echo $count2?>"> <a href="propertyDetails.php?property_id=<?php echo $property['id']; ?>"> <p class="property"> <?php echo $property['name']; ?> </p> </a></td>
+              <td class="Pinfo <?php echo $count2?>"> <?php echo $property['category']; ?> </td>
+              <td class="Pinfo <?php echo $count2?>"> <?php echo $property ["rent_cost"]; ?> </td>
+              <td class="Pinfo <?php echo $count2?>"> <?php echo $property['rooms']; ?> </td>
+              <td class="Pinfo <?php echo $count2?>"> <?php echo $property['location']; ?> </td>
               <td> 
-               <form action="delete_property.php" method="post" name="delete_property">
+              
                 <input type="hidden" name="property_id" value="<?php echo $property['id']; ?>">
-                <button type="button" id="delete_button" class="d"> Delete </button>
-               </form>
+                <button type="button" id="delete_button" class="d" onclick="deleteP(<?php echo $property['id'];?>, <?php echo $count2?>)"> Delete </button>
+             
               </td>
             </tr>
-          <?php } ?>
+          <?php }
+                 }?>
         </tbody>
           </table>
       
         
         <script> 
-  $(document).ready(function() {
-    // Add click event listener to the 'Accept' and 'Decline' buttons
-    $('.a, .d').on('click', function(e) {
-      e.preventDefault(); // Prevent the default form submission
-
-      // Get the application ID, property ID, and the button value (accept or decline)
-      var applicationID = $(this).siblings('[name="application_id"]').val();
-      var propertyID = $(this).siblings('[name="property_id"]').val();
-      var buttonValue = $(this).val();
-
-      // Send an AJAX request to the PHP page
-      $.ajax({
-        url: 'update_application.php',
-        type: 'POST',
-        data: {
-          application_id: applicationID,
-          property_id: propertyID,
-          action: buttonValue
-        },
-        success: function(response) {
-          // If the update was successful, update the status in the table
-          if (response == true) {
-            // Get the status cell and update the text
-            var statusCell = $(this).closest('tr').find('td:nth-child(4)');
-            statusCell.text(buttonValue);
-          }
-        }.bind(this) // Bind the success callbackfunction to the clicked button element 
-      });
-    });
+  function changeStatus(status, app_id, num, prop_id) {
+   $.post ("update_application.php", {application_id: app_id, action:status, property_id:prop_id}, function(data){
+   
+   if (data!== null){
+       $("#buttons"+num).html("");
+       if (status == "accept")
+       {
+           $("#status"+num).html("Accepted");
+           
+       }
+       else {
+           $("#status"+num).html("Declined");
+           }   }
   });
+  }
 </script>
 
 <script>
- $(document).ready(function() {
-  $('form[name="delete_property"]').submit(function(e) {
-    e.preventDefault(); // Prevent the default form submission
-    var form = $(this);
-    var property_id = form.find('input[name="property_id"]').val();
-    
-    // Send an AJAX request to the PHP page
-    $.ajax({
-      url: form.attr('action'),
-      type: 'POST',
-      data: {
-        property_id: property_id
-      },
-      success: function(response) {
-        // If the deletion was successful, update the table
-        if (response == true) {
-          // Reload the table data using an AJAX request
-          $.ajax({
-            url: 'get_properties.php',
-            success: function(data) {
-              // Update the table HTML with the new data
-              $('table[name="property_table"]').html(data);
-            },
-            error: function(xhr, status, error) {
-              // Handle the error case here
-            }
-          });
+ function deleteP(prop_id, num) {
+    $.post("delete_property.php", {property_id: prop_id}, function(data) {
+        if (data !== null) {
+            $("#Pinfoo"+num).closest('tr').remove();
         }
-      },
-      error: function(xhr, status, error) {
-        // Handle the error case here
-      }
     });
-  });
-
-  // Add a click event listener to the delete button
-  $('.d').click(function() {
-    var form = $(this).closest('form[name="delete_property"]');
-    form.submit(); // Submit the form when the delete button is clicked
-  });
-});
+}
 </script>
     </main>
 
