@@ -24,18 +24,12 @@ mysqli_query($conn, "DELETE FROM RentalApplication WHERE property_id = $property
 mysqli_query($conn, "DELETE FROM PropertyImage WHERE property_id = $property_id");
 
 // Delete the property from the Property table
-if (mysqli_query($conn, "DELETE FROM Property WHERE id = $property_id")) {
-  // The deletion was successful, return a true response
-  echo true;
-} else {
-  // The deletion failed, return a false response
-  echo false;
-}
+ mysqli_query($conn, "DELETE FROM Property WHERE id = $property_id");
 
 // Close the database connection
 mysqli_close($conn);
 
 //Redirect the homeowner to their homepage
-# header("Location: HomeOwner.php");
-# exit();
+header("Location: HomeOwner.php");
+exit();
 ?>
